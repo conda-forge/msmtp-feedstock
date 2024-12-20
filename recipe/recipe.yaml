@@ -1,6 +1,6 @@
 context:
   name: msmtp
-  version: 1.8.25
+  version: 1.8.27
 
 recipe:
   name: ${{ name }}
@@ -8,7 +8,7 @@ recipe:
 
 source:
   url: https://marlam.de/msmtp/releases/${{ name }}-${{ version }}.tar.xz
-  sha256: 2dfe1dbbb397d26fe0b0b6b2e9cd2efdf9d72dd42d18e70d7f363ada2652d738
+  sha256: 94030580a63a747faa0a3b9b1b264ae355aad33a4d94b832bfeb5b21633c965e
 
 build:
   number: 0
@@ -22,7 +22,9 @@ outputs:
         - autoreconf -ivf
         - ./configure --prefix=$PREFIX --datarootdir=$PREFIX --with-tls=gnutls --with-libidn --with-libgsasl
         - make -j${CPU_COUNT}
-        - make check
+        # Tests broken in 1.8.27, uncomment this in 1.8.28
+        # https://git.marlam.de/gitweb/?p=msmtp.git;a=commit;h=2534708a094d5ee18876d31a0c9d856a0e15a3fe
+        # - make check
         - make install
     requirements:
       build:
@@ -35,7 +37,7 @@ outputs:
         - texinfo
       host:
         - gnutls
-        - libgsasl
+        - libgsasl >=2.1
       run:
         - ${{ pin_compatible('libgsasl', upper_bound='x') }}
     tests:
