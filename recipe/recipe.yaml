@@ -22,7 +22,9 @@ outputs:
         - autoreconf -ivf
         - ./configure --prefix=$PREFIX --datarootdir=$PREFIX --with-tls=gnutls --with-libidn --with-libgsasl
         - make -j${CPU_COUNT}
-        - make check
+        # Tests broken in 1.8.27, uncomment this in 1.8.28
+        # https://git.marlam.de/gitweb/?p=msmtp.git;a=commit;h=2534708a094d5ee18876d31a0c9d856a0e15a3fe
+        # - make check
         - make install
     requirements:
       build:
