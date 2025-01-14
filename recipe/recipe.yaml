@@ -33,7 +33,7 @@ outputs:
         - pkg-config
         - gettext
         - texinfo
-        - xz  # [osx]
+        - xz-tools  # [osx]
       host:
         - gnutls
         - libgsasl >=2.1
