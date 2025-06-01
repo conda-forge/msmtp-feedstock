@@ -33,7 +33,9 @@ outputs:
         - pkg-config
         - gettext
         - texinfo
-        - xz-tools  # [osx]
+        - if: osx
+          then:
+            - xz-tools
       host:
         - gnutls
         - libgsasl >=2.1
