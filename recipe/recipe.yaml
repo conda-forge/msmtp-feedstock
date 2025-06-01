@@ -22,7 +22,7 @@ outputs:
         - autoreconf -ivf
         - ./configure --prefix=$PREFIX --datarootdir=$PREFIX --with-tls=gnutls --with-libidn --with-libgsasl
         - make -j${CPU_COUNT}
-        - make check
+        - make check || (cat tests/test-suite.log && exit 1)
         - make install
     requirements:
       build:
