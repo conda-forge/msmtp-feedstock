@@ -31,7 +31,7 @@ outputs:
         - automake
         - make
         - pkg-config
-        - gettext
+        - gettext <=0.23.1
         - texinfo
         - if: osx
           then:
