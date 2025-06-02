@@ -1,0 +1,23 @@
+From b58dfab51915e4b38f7fe8326f96ede14ac49599 Mon Sep 17 00:00:00 2001
+From: Brandon Maier <brandon.maier@gmail.com>
+Date: Mon, 2 Jun 2025 08:04:19 -0500
+Subject: [PATCH] add debug tracing to test-header-handling.sh
+
+---
+ tests/test-header-handling.sh | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/tests/test-header-handling.sh b/tests/test-header-handling.sh
+index e58cde4..e4bcb04 100755
+--- a/tests/test-header-handling.sh
++++ b/tests/test-header-handling.sh
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env bash
+ 
++set -x
+ set -e
+ 
+ # Start an msmtpd that dumps the mail and the recipient lists so we can check them
+-- 
+2.49.0
+

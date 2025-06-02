@@ -9,6 +9,8 @@ recipe:
 source:
   url: https://marlam.de/msmtp/releases/${{ name }}-${{ version }}.tar.xz
   sha256: 3a57f155f54e4860f7dd42138d9bea1af615b99dfab5ab4cd728fc8c09a647a4
+  patches:
+    - 0001-add-debug-tracing-to-test-header-handling.sh.patch
 
 build:
   number: 1
