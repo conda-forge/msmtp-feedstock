@@ -39,6 +39,9 @@ outputs:
       host:
         - gnutls
         - libgsasl >=2.1
+        - if: osx
+          then:
+            - libintl-devel
       run:
         - ${{ pin_compatible('libgsasl', upper_bound='x') }}
     tests:
