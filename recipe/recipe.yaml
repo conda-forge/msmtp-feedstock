@@ -1,6 +1,6 @@
 context:
   name: msmtp
-  version: "1.8.32"
+  version: "1.8.33"
 
 recipe:
   name: ${{ name }}
@@ -8,7 +8,9 @@ recipe:
 
 source:
   url: https://marlam.de/msmtp/releases/${{ name }}-${{ version }}.tar.xz
-  sha256: 20cd58b58dd007acf7b937fa1a1e21f3afb3e9ef5bbcfb8b4f5650deadc64db4
+  sha256: 41c163ce2c4c8c3c326cda8d0abd9391a7323788f0a893f49bfbe7aff3d4f276
+  patches:
+    - 0001-Fix-missing-type-bool-on-osx.patch
 
 build:
   number: 0
