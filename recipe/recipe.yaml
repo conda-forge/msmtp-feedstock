@@ -9,6 +9,8 @@ recipe:
 source:
   url: https://marlam.de/msmtp/releases/${{ name }}-${{ version }}.tar.xz
   sha256: 41c163ce2c4c8c3c326cda8d0abd9391a7323788f0a893f49bfbe7aff3d4f276
+  patches:
+    - 0001-Fix-missing-type-bool-on-osx.patch
 
 build:
   number: 0
